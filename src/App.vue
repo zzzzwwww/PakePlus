@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { createDir, BaseDirectory } from '@tauri-apps/api/fs'
 import { os } from '@tauri-apps/api'
+import { appWindow } from '@tauri-apps/api/window'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
