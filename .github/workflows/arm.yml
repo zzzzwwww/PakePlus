@@ -44,6 +44,9 @@ jobs:
                   node-version: 20
                   cache: pnpm
 
+            - name: Install frontend dependencies
+              run: pnpm install
+
             - name: 'Setup for linux' # 设置 Linux 环境
               run: |-
                   sudo ls -lR /etc/apt/
