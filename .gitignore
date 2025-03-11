@@ -11,6 +11,10 @@ node_modules
 dist-ssr
 *.local
 dist
+stats.html
+auto-imports.d.ts
+components.d.ts
+
 
 # Editor directories and files
 .vscode/*
