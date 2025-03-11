@@ -97,11 +97,9 @@ jobs:
                     export PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig/:$PKG_CONFIG_PATH
                     export PKG_CONFIG_SYSROOT_DIR=/usr/arm-linux-gnueabihf/
                   fi
-                  pnpm build --target ${{ matrix.target }}
+                  pnpm tauri build --target ${{ matrix.target }}
               env:
                   NODE_OPTIONS: '--max_old_space_size=4096'
-                  TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-                  TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
 
             - name: Get Version # 获取版本号
               run: |
