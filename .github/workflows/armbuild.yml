@@ -36,16 +36,6 @@ jobs:
                   workspaces: src-tauri
                   cache-on-failure: true
 
-            - uses: pnpm/action-setup@v3
-              with:
-                  version: latest
-
-            - name: Sync node version and setup cache
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: pnpm
-
             - name: Build app
               uses: pguyot/arm-runner-action@v2.6.5
               with:
@@ -69,6 +59,7 @@ jobs:
                       curl -fsSL https://deb.nodesource.com/setup_lts.x | bash
                       apt-get install -y nodejs
                       # Install frontend dependencies
+                      npm install -g pnpm
                       pnpm install
                       # Build the application
                       pnpm tauri build -- --verbose
