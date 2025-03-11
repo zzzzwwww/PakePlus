@@ -7,8 +7,6 @@ on:
 
 jobs:
     alpha-for-linux-arm:
-        needs: check_commit
-        if: ${{ needs.check_commit.outputs.should_run == 'true' }}
         strategy:
             fail-fast: false
             matrix:
