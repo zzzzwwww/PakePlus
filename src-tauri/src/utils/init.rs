@@ -10,7 +10,7 @@ pub async fn resolve_setup(app: &mut App) -> Result<(), Error> {
         {
             "title": "PakePlus",
             "visible": false,
-            "url": "index.html",
+            "url": "http://192.168.2.209:5173/user/login",
             "label": "main"
         }
     "#;
