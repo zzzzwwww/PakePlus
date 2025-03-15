@@ -5,7 +5,8 @@ on:
     push:
         branches:
             - webdev
-
+# linux arm 需要配置tauri.conf.json target 只要 linux
+# The bundle targets, currently supports [“deb”, “rpm”] or "all"
 jobs:
     build:
         runs-on: ubuntu-22.04
