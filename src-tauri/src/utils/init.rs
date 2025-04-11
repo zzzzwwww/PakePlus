@@ -4,13 +4,15 @@ use tauri_plugin_store::StoreExt;
 
 // handle something when start app
 pub async fn resolve_setup(app: &mut App) -> Result<(), Error> {
+    let args: Vec<String> = std::env::args().collect();
+    println!("Application started with arguments: {:?}", args);
     let app_handle = app.handle();
     // 示例 JSON 字符串
     let window_json = r#"
         {
             "title": "PakePlus",
             "visible": false,
-            "url": "https://www.baidu.com/index.htm",
+            "url": "index.html?name=Tom&age=18",
             "label": "main"
         }
     "#;

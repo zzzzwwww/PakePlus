@@ -5,12 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>载入中...</title>
-      <script type="module" crossorigin src="/assets/index-efa3a32c.js"></script>
-      <link rel="stylesheet" href="/assets/index-fcb9d272.css">
+        <script>
+            // 获取当前页面的查询参数部分（不包括 ?）
+            const queryString = window.location.search
+            // 使用 URLSearchParams 解析
+            const params = new URLSearchParams(queryString)
+            // 转换为对象
+            const queryParams = {}
+            for (const [key, value] of params.entries()) {
+                queryParams[key] = value
+            }
+            // { name: "Tom", age: "18" } （例如 ?name=Tom&age=18）
+            console.log('queryParams', queryParams)
+        </script>
     </head>
     <body>
         <div id="root"></div>
-        
-        <div style="display: none">PUBLISHTIME</div>
+        <div>PUBLISHTIME</div>
     </body>
 </html>
