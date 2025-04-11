@@ -6,13 +6,19 @@ use tauri_plugin_store::StoreExt;
 pub async fn resolve_setup(app: &mut App) -> Result<(), Error> {
     let args: Vec<String> = std::env::args().collect();
     println!("Application started with arguments: {:?}", args);
+    // 将参数转成查询参数格式
+    let query_params = args
+        .iter()
+        .map(|arg| arg.split('=').collect::<Vec<&str>>())
+        .collect::<Vec<Vec<&str>>>();
+    println!("query_params: {:?}", query_params);
     let app_handle = app.handle();
     // 示例 JSON 字符串
     let window_json = r#"
         {
             "title": "PakePlus",
             "visible": false,
-            "url": "index.html?name=Tom&age=18",
+            "url": "index.html?-name=Tom&--age=18",
             "label": "main"
         }
     "#;

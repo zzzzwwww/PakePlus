@@ -17,6 +17,14 @@
             }
             // { name: "Tom", age: "18" } （例如 ?name=Tom&age=18）
             console.log('queryParams', queryParams)
+            // 将 queryParams 转换为 JSON 字符串
+            const queryParamsJson = JSON.stringify(queryParams)
+            console.log('queryParamsJson', queryParamsJson)
+            // 将queryParamsJson 写入到root元素中显示
+            window.addEventListener('DOMContentLoaded', () => {
+                const root = document.getElementById('root')
+                root.innerHTML = queryParamsJson
+            })
         </script>
     </head>
     <body>
