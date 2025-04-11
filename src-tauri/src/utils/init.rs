@@ -10,7 +10,7 @@ pub async fn resolve_setup(app: &mut App) -> Result<(), Error> {
         {
             "title": "PakePlus",
             "visible": false,
-            "url": "https://www.baidu.com/",
+            "url": "https://www.baidu.com/index.htm",
             "label": "main"
         }
     "#;
